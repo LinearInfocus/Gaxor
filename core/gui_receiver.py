@@ -116,7 +116,7 @@ class ReceiverGUI:
                     self.log_message("RSA keys generated.")
 
                     # Set up server
-                    host = "192.168.192.228"
+                    host = socket.gethostbyname(socket.gethostname())
                     port = int(self.port_entry.get() or DEFAULT_PORT)  # Using constant DEFAULT_PORT
                     self.server_socket = socket.socket()
                     self.server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
